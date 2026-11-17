@@ -1,0 +1,101 @@
+{
+  "raw_lots": [
+    {
+      "lot_id": "R1",
+      "kg": 100,
+      "yield_fraction": {
+        "A": 0.6,
+        "B": 0.35
+      }
+    },
+    {
+      "lot_id": "R2",
+      "kg": 80,
+      "yield_fraction": {
+        "A": 0.3,
+        "B": 0.6
+      }
+    }
+  ],
+  "capacity_minutes": {
+    "wash": 180,
+    "pack": 100
+  },
+  "downgrade": {
+    "A": [
+      "B"
+    ],
+    "B": []
+  },
+  "products": {
+    "premium": {
+      "input_grade": "A",
+      "conversion_yield": 0.95,
+      "minutes_per_kg": {
+        "wash": 0.5,
+        "pack": 1.2
+      },
+      "variable_cents_per_kg": 100
+    },
+    "bulk": {
+      "input_grade": "B",
+      "conversion_yield": 0.98,
+      "minutes_per_kg": {
+        "wash": 0.2,
+        "pack": 0.1
+      },
+      "variable_cents_per_kg": 25
+    }
+  },
+  "offers": [
+    {
+      "offer_id": "O1",
+      "product": "premium",
+      "min_kg": 40,
+      "max_kg": 60,
+      "step_kg": 10,
+      "price_cents_per_kg": 450,
+      "price_sensitivity": 1.2
+    },
+    {
+      "offer_id": "O2",
+      "product": "premium",
+      "min_kg": 40,
+      "max_kg": 50,
+      "step_kg": 10,
+      "price_cents_per_kg": 470,
+      "price_sensitivity": 0.7
+    },
+    {
+      "offer_id": "O3",
+      "product": "bulk",
+      "min_kg": 20,
+      "max_kg": 100,
+      "step_kg": 10,
+      "price_cents_per_kg": 260,
+      "price_sensitivity": 1.8
+    }
+  ],
+  "bookings": [],
+  "fixed_cents": 12000,
+  "market_scenarios": [
+    {
+      "name": "regular",
+      "weight": 0.5,
+      "premium_price_factor": 1,
+      "bulk_price_factor": 1
+    },
+    {
+      "name": "weak",
+      "weight": 0.3,
+      "premium_price_factor": 0.85,
+      "bulk_price_factor": 0.9
+    },
+    {
+      "name": "strong",
+      "weight": 0.2,
+      "premium_price_factor": 1.1,
+      "bulk_price_factor": 1.05
+    }
+  ]
+}
